@@ -361,7 +361,13 @@ class Ps_checkout extends PaymentModule
 
     public function getContent()
     {
-        $onboarding = new PrestaShop\AccountsAuth\Wrapper\Onboarding();
+        $boUrl =  preg_replace(
+            '/^https?:\/\/[^\/]+/',
+            '',
+            $this->context->link->getAdminLink('AdminModules', true) . '&configure=ps_checkout'
+        );
+        // dump($boUrl);die;
+        $onboarding = new PrestaShop\AccountsAuth\Wrapper\Onboarding($boUrl);
 
         $paypalAccount = new PrestaShop\Module\PrestashopCheckout\Repository\PaypalAccountRepository();
         $psAccount = new PrestaShop\Module\PrestashopCheckout\Repository\PsAccountRepository();
