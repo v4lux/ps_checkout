@@ -18,7 +18,6 @@
  */
 import Vue from 'vue';
 import Router from 'vue-router';
-import store from './store';
 
 import Customize from '@/pages/Customize';
 import Accounts from '@/pages/Accounts';
@@ -31,6 +30,7 @@ import Advanced from '@/pages/Advanced';
 import Experimental from '@/pages/Experimental';
 import Debug from '@/pages/Debug';
 import Help from '@/pages/Help';
+import store from './store';
 
 Vue.use(Router);
 

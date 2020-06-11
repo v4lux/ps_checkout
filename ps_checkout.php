@@ -361,7 +361,7 @@ class Ps_checkout extends PaymentModule
 
     public function getContent()
     {
-        $boUrl =  preg_replace(
+        $boUrl = preg_replace(
             '/^https?:\/\/[^\/]+/',
             '',
             $this->context->link->getAdminLink('AdminModules', true) . '&configure=ps_checkout'
